@@ -1,6 +1,6 @@
 {
-    "name": "recipes",
-    "short_name": "recipes",
+    "name": "chapter_5",
+    "short_name": "chapter_5",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
