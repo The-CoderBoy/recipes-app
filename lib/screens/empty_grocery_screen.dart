@@ -1,26 +1,23 @@
-import 'package:chapter_5/models/models.dart';
 import 'package:flutter/material.dart';
+import '../models/app_state_manager.dart';
 import 'package:provider/provider.dart';
-import '../models/models.dart';
 
 class EmptyGroceryScreen extends StatelessWidget {
   const EmptyGroceryScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(30.0),
-// 2
       child: Center(
-// 3
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            AspectRatio(
-              aspectRatio: 1 / 1,
-              child: Image.asset('assets/fooderlich_assets/empty_list.png'),
-            ),
-            const SizedBox(
-              height: 8.0,
+            Flexible(
+              child: AspectRatio(
+                aspectRatio: 1 / 1,
+                child: Image.asset('assets/fooderlich_assets/empty_list.png'),
+              ),
             ),
             const Text(
               'No Groceries',
@@ -33,16 +30,17 @@ class EmptyGroceryScreen extends StatelessWidget {
               textAlign: TextAlign.center,
             ),
             MaterialButton(
-              onPressed: () {
-                Provider.of<TabManager>(context, listen: false).goToRecipes();
-              },
               textColor: Colors.white,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30.0),
               ),
               color: Colors.green,
+              onPressed: () {
+                Provider.of<AppStateManager>(context, listen: false)
+                    .goToRecipes();
+              },
               child: const Text('Browse Recipes'),
-            )
+            ),
           ],
         ),
       ),

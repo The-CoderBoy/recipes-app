@@ -8,7 +8,7 @@ class RecipeCardType {
 }
 
 class ExploreRecipe {
-  // String id;
+  String id;
   String cardType;
   String title;
   String subtitle;
@@ -28,7 +28,7 @@ class ExploreRecipe {
   List<Instruction> instructions;
 
   ExploreRecipe({
-    // required this.id,
+    required this.id,
     required this.cardType,
     required this.title,
     this.subtitle = '',
@@ -65,7 +65,7 @@ class ExploreRecipe {
     }
 
     return ExploreRecipe(
-      // id: json['id'] ?? '',
+      id: json['id'] ?? '',
       cardType: json['cardType'] ?? '',
       title: json['title'] ?? '',
       subtitle: json['subtitle'] ?? '',
